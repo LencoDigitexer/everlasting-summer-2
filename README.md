@@ -1,25 +1,32 @@
-# chess-ai
-A chess engine by someone who doesn't know how to play chess.
+# Everlasting summer 2
 
-## About
-chess-ai is a simple chess AI in JavaScript. 
+Сыграйте в Бесконечное лето 2 | Шахматная доска с фигурами из персонажей визуальной новеллы Бесконечное лето
 
-The primary concern of chess-ai is the decision-making part of the application. All functionality outside the scope of the AI are implemented using external libraries:
-- Chessboard GUI: Using the chessboard.js API
-- Game Mechanics: Using the chess.js API
+![Alt text](image.png)
 
-The AI uses the [minimax algorithm](https://en.wikipedia.org/wiki/Minimax), which is optimised by [alpha-beta pruning](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning). 
+## О программе
 
-The evaluation function uses [piece square tables](https://www.chessprogramming.org/Piece-Square_Tables) adapted from Sunfish.py, and eliminates the need for nested loops by updating the sum based on each move instead of re-computing the sum of individual pieces at each leaf node.
+Используется библиотека chess-ai - это простой шахматный ИИ на JavaScript.
 
-A global sum is used to keep track of black's evaluation score after each move, which is used to display the 'advantage' bar. 
+Основной задачей chess-ai является принятие решений в приложении. Вся функциональность, выходящая за рамки ИИ, реализована с помощью внешних библиотек:
 
-## How to Play?
-1. Head over to https://zeyu2001.github.io/chess-ai/.
+- Chessboard GUI: Использование API chessboard.js
+- Игровая механика: API chess.js
 
-2. Play as white by dragging a piece to your desired location. The AI plays as black. The AI's minimax search depth (which is directly related to how well it will play) can be customised using the 'Search Depth (Black)' dropdown. Using a higher value will improve the AI's accuracy, but it will take longer to decide on the next move.
+ИИ использует [минимаксный алгоритм](https://en.wikipedia.org/wiki/Minimax), который оптимизируется с помощью [альфа-бета обрезки](https://en.wikipedia.org/wiki/Alpha%E2%80%93beta_pruning).
 
-3. To pit the AI against itself, click the 'Start Game' button under Computer vs. Computer. You can stop the game at any time using the 'Stop and Reset' button.
+Функция оценки использует [таблицы квадратов фигур](https://www.chessprogramming.org/Piece-Square_Tables), адаптированные из Sunfish.py, и устраняет необходимость во вложенных циклах, обновляя сумму на основе каждого хода вместо повторного вычисления суммы отдельных фигур в каждом узле листа.
 
-## License
-Use of this project is governed by the [MIT License](LICENSE).
+Глобальная сумма используется для отслеживания оценки черных после каждого хода, которая используется для отображения полосы "преимущества".
+
+## Как играть?
+
+1. Перейдите на сайт <https://lencodigitexer.github.io/everlasting-summer-2/>.
+
+2. Играйте за белых, перетаскивая фигуру в нужное место. ИИ играет черными. Глубину минимаксного поиска ИИ (которая напрямую связана с тем, насколько хорошо он будет играть) можно настроить с помощью выпадающего параметра "Глубина поиска (черные)". Использование более высокого значения повысит точность ИИ, но ему потребуется больше времени для принятия решения о следующем ходе.
+
+3. Чтобы сразить ИИ с самим собой, нажмите кнопку "Начать игру" в разделе "Компьютер против компьютера". Вы можете остановить игру в любой момент с помощью кнопки "Остановить и сбросить".
+
+## Лицензия
+
+Использование этой программы [MIT License](LICENSE).

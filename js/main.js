@@ -315,20 +315,20 @@ function minimax(game, depth, alpha, beta, isMaximizingPlayer, sum, color) {
 
 function checkStatus(color) {
   if (game.in_checkmate()) {
-    $('#status').html(`<b>Checkmate!</b> Oops, <b>${color}</b> lost.`);
+    $('#status').html(`<b>Шах и мат!</b> Oops, <b>${color}</b> проиграли.`);
   } else if (game.insufficient_material()) {
-    $('#status').html(`It's a <b>draw!</b> (Insufficient Material)`);
+    $('#status').html(`<b>Ничья!</b> (Недостаточно материала)`);
   } else if (game.in_threefold_repetition()) {
-    $('#status').html(`It's a <b>draw!</b> (Threefold Repetition)`);
+    $('#status').html(`<b>Ничья!</b> (Троекратное повторение)`);
   } else if (game.in_stalemate()) {
-    $('#status').html(`It's a <b>draw!</b> (Stalemate)`);
+    $('#status').html(`<b>Ничья!</b> (Тупик)`);
   } else if (game.in_draw()) {
-    $('#status').html(`It's a <b>draw!</b> (50-move Rule)`);
+    $('#status').html(`b>Ничья!</b> (Правило 50 ходов)`);
   } else if (game.in_check()) {
-    $('#status').html(`Oops, <b>${color}</b> is in <b>check!</b>`);
+    $('#status').html(`Упс, <b>${color}</b> дан <b>шах!</b>`);
     return false;
   } else {
-    $('#status').html(`No check, checkmate, or draw.`);
+    $('#status').html(`Ни шаха, ни мата, ни ничьей.`);
     return false;
   }
   return true;
@@ -336,10 +336,10 @@ function checkStatus(color) {
 
 function updateAdvantage() {
   if (globalSum > 0) {
-    $('#advantageColor').text('Black');
+    $('#advantageColor').text('Черные');
     $('#advantageNumber').text(globalSum);
   } else if (globalSum < 0) {
-    $('#advantageColor').text('White');
+    $('#advantageColor').text('Белые');
     $('#advantageNumber').text(-globalSum);
   } else {
     $('#advantageColor').text('Neither side');
@@ -552,7 +552,7 @@ $('#redoBtn').on('click', function () {
       }, 250);
     }, 250);
   } else {
-    alert('Nothing to redo.');
+    alert('Ничего не нужно переделывать.');
   }
 });
 

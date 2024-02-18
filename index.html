@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <title>Chess AI</title>
+        <title>Бесконечное лето 2 | Шахматы</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta
           name="description"           
-          content="A simple chess AI.">
+          content="Бесконечное лето 2 | Шахматы">
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" 
@@ -79,19 +79,23 @@
             <div class="container my-3">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <h1 class="text-align-center">Simple Chess AI</h1>
-                        <div class="row justify-content-center">
-                            <span id="position-count">0</span> &nbsp positions evaluated in &nbsp <span id="time">0</span>s.
+                        <div class="text_bg">
+                            <img class="text_bg_img" src="img/part_2.png">
                         </div>
-                        <div class="row mb-3 justify-content-center">
-                            That's &nbsp <span id="positions-per-s">0</span> &nbsp positions / s.
+                        <div class="text_bg">
+                            <div class="row justify-content-center">
+                                <span id="position-count">0</span> &nbsp позиций, оцененных в &nbsp <span id="time">0</span>с.
+                            </div>
+                            <div class="row mb-3 justify-content-center">
+                                Это &nbsp <span id="positions-per-s">0</span> &nbsp позиция / с.
+                            </div>
                         </div>
                         <div id="accordion">
                             <div class="card">
                                 <div class="card-header" id="settingsHeading">
                                     <h2 class="text-align-center">
                                         <button class="btn btn-header no-outline" data-toggle="collapse" data-target="#settings" aria-expanded="true" aria-controls="settings">
-                                            Settings
+                                            Настройки
                                         </button>
                                     </h2>
                                 </div>
@@ -100,7 +104,7 @@
                                 <div class="card-body">
                                     <div class="row align-items-center justify-content-center">
                                         <div class="form-group">
-                                            <label for="search-depth">Search Depth (Black):</label>
+                                            <label for="search-depth">Глубина поиска (черных):</label>
                                             <select id="search-depth">
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -112,7 +116,7 @@
                                     </div>
                                     <div class="row align-items-center justify-content-center">
                                         <div class="form-group">
-                                            <label for="search-depth-white">Search Depth (White):</label>
+                                            <label for="search-depth-white">Глубина поиск (белых):</label>
                                             <select id="search-depth-white">
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -125,7 +129,7 @@
                                     <div class="row align-items-center justify-content-center">
                                         <div class="form-group">
                                             <input type="checkbox" id="showHint" name="showHint" value="showHint">
-                                            <label for="showHint">Show Suggested Move (White)</label>
+                                            <label for="showHint">Показать предлагаемый ход (белый)</label>
                                         </div>
                                     </div>
                                 </div>
@@ -134,7 +138,7 @@
                                 <div class="card-header" id="openingPositionsHeading">
                                     <h2 class="text-align-center">
                                         <button class="btn btn-header no-outline" data-toggle="collapse" data-target="#openingPositions" aria-expanded="true" aria-controls="openingPositions">
-                                            Opening Positions
+                                            Открытые позиции
                                         </button>
                                     </h2>
                                 </div>
@@ -143,18 +147,18 @@
                                 <div class="card-body">
                                     <div class="row my-3 text-align-center">
                                         <div class="col-md-6 my-2">
-                                            <button class="btn btn-primary" id="ruyLopezBtn">Ruy Lopez</button>
+                                            <button class="btn btn-primary" id="ruyLopezBtn">Руй Лопес</button>
                                         </div>
                                         <div class="col-md-6 my-2">
-                                            <button class="btn btn-primary" id="italianGameBtn">Italian Game</button>
+                                            <button class="btn btn-primary" id="italianGameBtn">Итальянская игра</button>
                                         </div>
                                     </div>
                                     <div class="row my-3 text-align-center">
                                         <div class="col-md-6 my-2">
-                                            <button class="btn btn-primary" id="sicilianDefenseBtn">Sicilian Defense</button>
+                                            <button class="btn btn-primary" id="sicilianDefenseBtn">Сицилианская защита</button>
                                         </div>
                                         <div class="col-md-6 my-2">
-                                            <button class="btn btn-primary" id="startBtn">Start Position</button>
+                                            <button class="btn btn-primary" id="startBtn">Стартовая позиция</button>
                                         </div>
                                     </div>
                                 </div>
@@ -163,7 +167,7 @@
                                 <div class="card-header" id="compVsCompHeading">
                                     <h2 class="text-align-center">
                                         <button class="btn btn-header no-outline" data-toggle="collapse" data-target="#compVsComp" aria-expanded="true" aria-controls="compVsComp">
-                                            Computer vs. Computer
+                                            Компьютер vs Компьютер
                                         </button>
                                     </h2>
                                 </div>
@@ -173,52 +177,65 @@
                             <div class="card-body">
                                 <div class="row text-align-center">
                                     <div class="col-md-6 my-2">
-                                        <button class="btn btn-success" id="compVsCompBtn">Start Game</button>
+                                        <button class="btn btn-success" id="compVsCompBtn">Начать игру</button>
                                     </div>
                                     <div class="col-md-6 my-2">
-                                        <button class="btn btn-danger" id="resetBtn">Stop and Reset</button>
+                                        <button class="btn btn-danger" id="resetBtn">Остановить и сбросить</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row my-3 text-align-center">
                             <div class="col-md-12">
-                                <h2>Advantage</h2>
-                                <p><span id="advantageColor">Neither side</span> has the advantage 
-                                    (+<span id="advantageNumber">0</span>).</p>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" 
-                                        role="progressbar" aria-valuenow="0" style="width: 50%"
-                                        aria-valuemin="-2000" aria-valuemax="4000" id='advantageBar'>
+                                <div class="text_bg">
+                                    <h2>Преимущество</h2>
+                                    <p><span id="advantageColor">Ни одна из сторон не</span> имеют преимущество
+                                        (+<span id="advantageNumber">0</span>).</p>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" 
+                                            role="progressbar" aria-valuenow="0" style="width: 50%"
+                                            aria-valuemin="-2000" aria-valuemax="4000" id='advantageBar'>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row my-3 text-align-center">
                             <div class="col-md-12">
-                                <h2>Status</h2>
-                                <p><span id="status">No check, checkmate, or draw.</span></p>
+                                <div class="text_bg">
+                                    <h2>Статус</h2>
+                                    <p><span id="status">Ни шаха, ни мата, ни ничьей.</span></p>
+                                </div>
                             </div>
                         </div>
+                        <div class="row my-3 text-align-center">
+                            <div class="col-md-6">
+                                <div class="text_bg">
+                                    <p class="text-align-center"> Copyright &copy 2024
+                                        <a href="https://github.com/LencoDigitexer/everlasting-summer-2">lencodigitexer</a> 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </div>
                     <div class="col-md-6">
                         <div id="myBoard"></div>
                         <div class="row my-3 text-align-center">
                             <div class="col-md-6 my-2">
-                                <button class="btn btn-danger" id="undoBtn">Undo</button>
+                                <button class="btn btn-danger" id="undoBtn">Отменить</button>
                             </div>
                             <div class="col-md-6 my-2">
-                                <button class="btn btn-success" id="redoBtn">Redo</button>
+                                <button class="btn btn-success" id="redoBtn">Повторить</button>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </main>
         <footer>
-            <p class="text-align-center"> Copyright &copy 2020 
-                <a href="https://github.com/zeyu2001/chess-ai">Zhang Zeyu</a> 
-            </p>
+            
         </footer>
     </body>
 </html>

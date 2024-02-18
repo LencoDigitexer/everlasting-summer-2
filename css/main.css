@@ -11,6 +11,20 @@ body {
     padding: 0;
 }
 
+.text_bg{
+    background-color:#ffffffd7;
+    border-radius: 10px;
+}
+
+.text_bg_img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card-body {
+    background-color: antiquewhite;
+}
+
 #myBoard {
     /*
     width: 1000px;
